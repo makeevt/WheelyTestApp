@@ -6,3 +6,4 @@
   Copyright © 2019 makeev. All rights reserved.
 */
 
+"mainScreen.counterLabelTitle" = "Current value: %d";

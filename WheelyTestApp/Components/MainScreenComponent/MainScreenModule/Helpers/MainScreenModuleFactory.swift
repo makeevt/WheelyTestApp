@@ -11,7 +11,8 @@ class MainScreenModuleFactoryImpl: MainScreenModuleFactory {
     
     static func generateMainScreenViewController() -> UIViewController {
         let controller = MainScreenViewController()
-        let presenter = MainScreenPresenterImpl(view: controller)
+        let counter = CounterModelImpl()
+        let presenter = MainScreenPresenterImpl(view: controller, counter: counter)
         controller.presenter = presenter
         
         return controller

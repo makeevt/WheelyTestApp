@@ -22,6 +22,7 @@
 		4C88FEE322161BA200E41338 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FED822161BA200E41338 /* UIImageView+Extensions.swift */; };
 		4C88FEE522161BA200E41338 /* Synchronized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FEDB22161BA200E41338 /* Synchronized.swift */; };
 		4C88FEE822161CD500E41338 /* ImageTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FEE722161CD500E41338 /* ImageTarget.swift */; };
+		4C88FEEA2216220900E41338 /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FEE92216220900E41338 /* CounterModel.swift */; };
 		7651E9F78B3885E25E77A1D4 /* Pods_WheelyTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C8577A6AA5C206CBB067D /* Pods_WheelyTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		4C88FED822161BA200E41338 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		4C88FEDB22161BA200E41338 /* Synchronized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Synchronized.swift; sourceTree = "<group>"; };
 		4C88FEE722161CD500E41338 /* ImageTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTarget.swift; sourceTree = "<group>"; };
+		4C88FEE92216220900E41338 /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
 		C64C8577A6AA5C206CBB067D /* Pods_WheelyTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheelyTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 		4C88FEC0221617FE00E41338 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4C88FEE92216220900E41338 /* CounterModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			files = (
 				4C88FEBE221617EC00E41338 /* MainScreenViewController.swift in Sources */,
 				4C88FEE122161BA200E41338 /* UIColor+Extensions.swift in Sources */,
+				4C88FEEA2216220900E41338 /* CounterModel.swift in Sources */,
 				4C88FEA52216159600E41338 /* AppDelegate.swift in Sources */,
 				4C88FEB9221617C300E41338 /* MainScreenPresenter.swift in Sources */,
 				4C88FEE322161BA200E41338 /* UIImageView+Extensions.swift in Sources */,
