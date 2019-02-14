@@ -1,18 +1,15 @@
-//
-//  MainScreenModuleFactory.swift
-//  WheelyTestApp
-//
-//  Created by makeev on 15.02.2019.
-//  Copyright © 2019 makeev. All rights reserved.
-//
 
 import Foundation
 import UIKit
 
-class MainScreenModuleFactory {
+protocol MainScreenModuleFactory {
+    static func generateMainScreenViewController() -> UIViewController
+}
+
+class MainScreenModuleFactoryImpl: MainScreenModuleFactory {
     private init() {}
     
-    class func generateMainScreenViewController() -> UIViewController {
+    static func generateMainScreenViewController() -> UIViewController {
         let controller = MainScreenViewController()
         let presenter = MainScreenPresenterImpl(view: controller)
         controller.presenter = presenter
