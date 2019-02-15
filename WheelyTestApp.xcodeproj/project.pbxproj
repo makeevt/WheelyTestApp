@@ -19,10 +19,10 @@
 		4C88FEDF22161BA200E41338 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FED422161BA200E41338 /* String+Extensions.swift */; };
 		4C88FEE022161BA200E41338 /* Thread+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FED522161BA200E41338 /* Thread+Extensions.swift */; };
 		4C88FEE122161BA200E41338 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FED622161BA200E41338 /* UIColor+Extensions.swift */; };
-		4C88FEE322161BA200E41338 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FED822161BA200E41338 /* UIImageView+Extensions.swift */; };
 		4C88FEE522161BA200E41338 /* Synchronized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FEDB22161BA200E41338 /* Synchronized.swift */; };
 		4C88FEE822161CD500E41338 /* ImageTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FEE722161CD500E41338 /* ImageTarget.swift */; };
 		4C88FEEA2216220900E41338 /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FEE92216220900E41338 /* CounterModel.swift */; };
+		4C88FEEC2216289A00E41338 /* LoadableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88FEEB2216289A00E41338 /* LoadableImageView.swift */; };
 		7651E9F78B3885E25E77A1D4 /* Pods_WheelyTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C8577A6AA5C206CBB067D /* Pods_WheelyTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,10 +43,10 @@
 		4C88FED422161BA200E41338 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4C88FED522161BA200E41338 /* Thread+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+Extensions.swift"; sourceTree = "<group>"; };
 		4C88FED622161BA200E41338 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		4C88FED822161BA200E41338 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		4C88FEDB22161BA200E41338 /* Synchronized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Synchronized.swift; sourceTree = "<group>"; };
 		4C88FEE722161CD500E41338 /* ImageTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTarget.swift; sourceTree = "<group>"; };
 		4C88FEE92216220900E41338 /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
+		4C88FEEB2216289A00E41338 /* LoadableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableImageView.swift; sourceTree = "<group>"; };
 		C64C8577A6AA5C206CBB067D /* Pods_WheelyTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheelyTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,7 +155,6 @@
 				4C88FED422161BA200E41338 /* String+Extensions.swift */,
 				4C88FED522161BA200E41338 /* Thread+Extensions.swift */,
 				4C88FED622161BA200E41338 /* UIColor+Extensions.swift */,
-				4C88FED822161BA200E41338 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -165,6 +164,7 @@
 			children = (
 				4C88FEDB22161BA200E41338 /* Synchronized.swift */,
 				4C88FEE722161CD500E41338 /* ImageTarget.swift */,
+				4C88FEEB2216289A00E41338 /* LoadableImageView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 				4C88FEEA2216220900E41338 /* CounterModel.swift in Sources */,
 				4C88FEA52216159600E41338 /* AppDelegate.swift in Sources */,
 				4C88FEB9221617C300E41338 /* MainScreenPresenter.swift in Sources */,
-				4C88FEE322161BA200E41338 /* UIImageView+Extensions.swift in Sources */,
+				4C88FEEC2216289A00E41338 /* LoadableImageView.swift in Sources */,
 				4C88FEE022161BA200E41338 /* Thread+Extensions.swift in Sources */,
 				4C88FEDF22161BA200E41338 /* String+Extensions.swift in Sources */,
 				4C88FEE822161CD500E41338 /* ImageTarget.swift in Sources */,

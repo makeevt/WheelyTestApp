@@ -14,9 +14,18 @@ class MainScreenViewController: UIViewController, MainScreenView {
     
     var presenter: MainScreenPresenter!
     
+    var imageUrl: String {
+        get {
+            return self.textView.text ?? ""
+        }
+        set {
+            self.textView.text = newValue
+        }
+    }
+    
     //MARK:- Outlets
     
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: LoadableImageView!
     @IBOutlet private weak var textView: UITextField!
     @IBOutlet private weak var countLabel: UILabel!
     
@@ -27,7 +36,7 @@ class MainScreenViewController: UIViewController, MainScreenView {
     
     //MARK:- Private properties
     
-    
+    private var buttonsState: MainScreenViewAvailibleActionsState = .nothing
     
     // MARK: - Lifecycle
     
@@ -41,6 +50,11 @@ class MainScreenViewController: UIViewController, MainScreenView {
     
     func configure(counterValue: Int) {
         self.countLabel.text = String(format: Constants.counterLabelText, counterValue)
+    }
+    
+    func configure(buttonsState: MainScreenViewAvailibleActionsState) {
+        self.buttonsState = buttonsState
+        self.updateInterfaceEnabled()
     }
     
     // MARK: - Actions
@@ -57,8 +71,27 @@ class MainScreenViewController: UIViewController, MainScreenView {
         self.presenter.didTriggerCountUpTapped()
     }
     
+    @IBAction func textViewEditingChanged(_ sender: UITextField) {
+        self.presenter.didTriggerTextFieldChanged(text: sender.text ?? "")
+    }
+    
     // MARK: - Private methods
     
-    
+    private func updateInterfaceEnabled() {
+        switch self.buttonsState {
+        case .loading:
+            self.stopLoadButton.isEnabled = false
+            self.loadButton.isEnabled = true
+            self.textView.isEnabled = true
+        case .stopLoading:
+            self.stopLoadButton.isEnabled = true
+            self.loadButton.isEnabled = false
+            self.textView.isEnabled = false
+        case .nothing:
+            self.stopLoadButton.isEnabled = false
+            self.loadButton.isEnabled = false
+            self.textView.isEnabled = true
+        }
+    }
     
 }

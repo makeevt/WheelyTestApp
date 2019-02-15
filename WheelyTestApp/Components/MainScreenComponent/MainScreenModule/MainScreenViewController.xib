@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="countLabel" destination="AyK-TQ-3ey" id="04r-rL-Xzy"/>
                 <outlet property="countUpButton" destination="G24-H5-9xt" id="qQA-UR-4Nf"/>
-                <outlet property="imageView" destination="wRU-1D-fPj" id="BTs-eU-YDT"/>
+                <outlet property="imageView" destination="wRU-1D-fPj" id="FFR-ei-KxK"/>
                 <outlet property="loadButton" destination="oxa-R8-LHw" id="rgv-s3-3H0"/>
                 <outlet property="stopLoadButton" destination="tAH-ck-UVI" id="5wv-Hh-P5w"/>
                 <outlet property="textView" destination="zAc-Hy-Ipg" id="4f2-0G-KFP"/>
@@ -30,28 +30,31 @@
                     <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hX-AG-mGd">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="393"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="363.5"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wRU-1D-fPj">
-                                    <rect key="frame" x="16" y="16" width="288" height="200"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wRU-1D-fPj" customClass="LoadableImageView" customModule="WheelyTestApp" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="288" height="170.5"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Pfu-Xd-vRl"/>
+                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="Pfu-Xd-vRl"/>
                                     </constraints>
                                 </imageView>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter image link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAc-Hy-Ipg">
-                                    <rect key="frame" x="16" y="248" width="288" height="30"/>
+                                    <rect key="frame" x="16" y="218.5" width="288" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="textViewEditingChanged:" destination="-1" eventType="editingChanged" id="ERf-0V-fKq"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyK-TQ-3ey">
-                                    <rect key="frame" x="154" y="286" width="12.5" height="24"/>
+                                    <rect key="frame" x="154" y="256.5" width="12.5" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fVB-of-g5j">
-                                    <rect key="frame" x="18" y="342" width="284" height="34"/>
+                                    <rect key="frame" x="18" y="312.5" width="284" height="34"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxa-R8-LHw">
                                             <rect key="frame" x="0.0" y="0.0" width="92" height="34"/>
@@ -133,9 +136,9 @@
             <constraints>
                 <constraint firstItem="4wL-Xl-AlX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3Pz-aZ-nk6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4wL-Xl-AlX" secondAttribute="bottom" id="IuB-R1-Vyo"/>
+                <constraint firstItem="wRU-1D-fPj" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" priority="750" id="Tva-VG-Uk7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="4wL-Xl-AlX" secondAttribute="top" id="jNG-rF-N9p"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4wL-Xl-AlX" secondAttribute="trailing" id="qXP-WC-ZSv"/>
-                <constraint firstItem="wRU-1D-fPj" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" priority="750" id="y5j-73-lLB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

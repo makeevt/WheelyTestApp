@@ -3,9 +3,14 @@ import Foundation
 
 class MainScreenPresenterImpl: MainScreenPresenter {
     
+    private struct Constants {
+        static let defaultUrl = "https://million-wallpapers.ru/wallpapers/5/23/335848892134390.jpg"
+    }
+    
     private weak var view: MainScreenView?
     
     private let counter: CounterModel
+    private var lastLoadedImageUrl: String?
     
     
     init(view: MainScreenView, counter: CounterModel) {
@@ -15,6 +20,8 @@ class MainScreenPresenterImpl: MainScreenPresenter {
     
     func didTriggerViewReadyEvent() {
         self.view?.configure(counterValue: self.counter.value)
+        self.view?.imageUrl = Constants.defaultUrl
+        self.view?.configure(buttonsState: .loading)
     }
     
     func didTriggerCountUpTapped() {
@@ -24,9 +31,37 @@ class MainScreenPresenterImpl: MainScreenPresenter {
     
     func didTriggerStopLoadTapped(target: ImageTarget) {
         target.stopImageLoading()
+        self.view?.configure(buttonsState: .loading)
     }
     
     func didTriggerLoadImageTapped(target: ImageTarget) {
-        target.startImageLoading(urlPath: "https://cdn-images-1.medium.com/fit/c/50/50/1*K-lCI-P9kri0OFjJYUPP2w.jpeg")
+        guard let urlString = self.view?.imageUrl else {
+            return
+        }
+        self.view?.configure(buttonsState: .stopLoading)
+        target.startImageLoading(urlPath: urlString, completion: { [weak target, weak self] image in
+            Thread.do_onMainThread {
+                target?.endImageLoading(image: image)
+                
+                guard let self = self else { return }
+                let isSuccess: Bool = image != nil
+                self.lastLoadedImageUrl = isSuccess ? urlString : nil
+                let state: MainScreenViewAvailibleActionsState = isSuccess ? .nothing : .loading
+                self.view?.configure(buttonsState: state)
+            }
+        })
+    }
+    
+    func didTriggerTextFieldChanged(text: String) {
+        if text == "" {
+            self.view?.configure(buttonsState: .nothing)
+            return
+        }
+        guard let url = self.lastLoadedImageUrl else {
+            self.view?.configure(buttonsState: .loading)
+            return
+        }
+        let state: MainScreenViewAvailibleActionsState = url == text ? .nothing : .loading
+        self.view?.configure(buttonsState: state)
     }
 }
