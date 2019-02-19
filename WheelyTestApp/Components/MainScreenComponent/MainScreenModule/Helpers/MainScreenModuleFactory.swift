@@ -14,6 +14,7 @@ class MainScreenModuleFactoryImpl: MainScreenModuleFactory {
         let counter = CounterModelImpl()
         let presenter = MainScreenPresenterImpl(view: controller, counter: counter)
         controller.presenter = presenter
+        counter.delegate = presenter
         
         return controller
     }

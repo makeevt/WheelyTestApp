@@ -4,7 +4,7 @@ import Foundation
 class MainScreenPresenterImpl: MainScreenPresenter {
     
     private struct Constants {
-        static let defaultUrl = "https://million-wallpapers.ru/wallpapers/5/23/335848892134390.jpg"
+        static let defaultUrl = "https://i.imgflip.com/ze9f1.jpg"
     }
     
     private weak var view: MainScreenView?
@@ -26,7 +26,6 @@ class MainScreenPresenterImpl: MainScreenPresenter {
     
     func didTriggerCountUpTapped() {
         self.counter.increment()
-        self.view?.configure(counterValue: self.counter.value)
     }
     
     func didTriggerStopLoadTapped(target: ImageTarget) {
@@ -64,4 +63,12 @@ class MainScreenPresenterImpl: MainScreenPresenter {
         let state: MainScreenViewAvailibleActionsState = url == text ? .nothing : .loading
         self.view?.configure(buttonsState: state)
     }
+}
+
+extension MainScreenPresenterImpl: CounterModelDelegate {
+    
+    func counterModelDidChangeValue(_ counterModel: CounterModel, newValue: Int) {
+        self.view?.configure(counterValue: self.counter.value)
+    }
+    
 }
